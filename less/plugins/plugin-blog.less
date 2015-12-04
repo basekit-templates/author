@@ -1,0 +1,156 @@
+// --------------------------------
+// BALKAN: Variables-Mixins
+// --------------------------------
+
+
+
+// --------------------------------
+// Blog Post List
+// --------------------------------
+
+
+.blogpostlist {
+    margin-bottom: 80px;
+}
+
+
+.blogpostlist__post-items {
+    cursor: pointer;
+}
+
+// Product items in container
+.blogpostlist .post-article {
+    float: left;
+    width: 32.33%;
+    height: auto;
+    margin-right: 1%;
+    margin-bottom: 1%;
+
+    border: 2px solid @black;
+
+    .transition(@duration:0.2s, @ease:ease-in-out);
+
+    // Display 100% at mobile
+    @media @bp-mobile {
+        width: 100%;
+        margin-bottom: 4%;
+        min-width: 260px;
+    }
+}
+
+
+.blogpostlist .post-article:hover {
+    border: 2px solid @contrast-color;
+    // & .read-more {
+    //     text-decoration: underline;
+    // }
+
+    & .post-footer {
+        border-top: 2px solid @contrast-color;
+    }
+}
+
+
+// Read More button
+.blogpostlist  .read-more {
+    color: @paragraph-color;
+
+    .transition(@duration:0.2s, @ease:ease-in-out);
+
+    @media @bp-mobile {
+        height: 35px;
+        padding-top: 9px;
+    }
+}
+
+
+// Content
+// ---------------
+
+// Image - Stops warping when large image is inserted
+.blogpostlist__image {
+    width: 100%;
+    max-height: inherit !important; // Bootstrap overide so that list images retain full height
+}
+
+
+// Title
+.blogpostlist__title-link {
+  color: @heading-color;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+// Read more button
+.blogpostlist__read-more:hover {
+    text-decoration: none;
+}
+
+
+// Content & Timestamp
+.blogpostlist__post-content,
+.blogpostlist__timestamp {
+  padding: 0 17px;
+}
+
+
+.blogpostlist__post-footer {
+  border-top: 2px solid @black;
+  .transition(@duration:0.2s, @ease:ease-in-out);
+}
+
+
+.blogpostlist__post-footer .blogpostlist__timestamp {
+    margin: 18px 0;
+    font-size: 18px; // Stops design breaking when p sixe is changed
+
+    @media @bp-tablet {
+        font-size: 16px;
+        padding: 0 5px;
+    }
+
+    @media @bp-mobile {
+        margin: 8px 0;
+        font-size: 16px;
+        padding: 1px 10px;
+    }
+}
+
+
+// Post List Footer
+// ----------------
+
+.post-list-footer {
+    float: left;
+    width: 100%;
+}
+
+.blogpostlist__pagination-item .button--pagination {
+    margin-bottom: 10px;
+}
+
+
+
+// --------------------------------
+// Blog Post Page
+// --------------------------------
+
+
+.blogpost__post-content {
+    margin: 50px 0 20px;
+}
+
+
+.blogpost__post-header {
+    margin-bottom: 10px;
+}
+
+
+.post-image .image {
+    max-height: inherit; // Bootstrap overide so that blog images retain full height
+}
+
+

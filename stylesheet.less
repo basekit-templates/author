@@ -1,0 +1,106 @@
+// ---------------------
+// Balkan:  Main Styles
+// ---------------------
+
+// -----------------------------
+// 1. LESS Includes
+// -----------------------------
+
+
+@import "@{templateCommon}/bk-less-framework-v8.less";             // BK LESS Framework
+
+@import "@{templateLocal}/less/v8-variables.less";              // V8 Variables
+
+@import "@{templateLocal}/less/variables-mixins.less";          // Variables
+
+@import "@{templateLocal}/less/widgets/widgets-all.less";       // Widgets > All
+@import "@{templateLocal}/less/widgets/widget-gallery.less";    // Widgets > Gallery
+@import "@{templateLocal}/less/widgets/widget-navigation.less"; // Widgets > Navigation
+
+@import "@{templateLocal}/less/plugins/plugin-blog.less";       // Plugin > Blog
+@import "@{templateLocal}/less/plugins/plugin-menu.less";       // Plugin > Menu
+@import "@{templateLocal}/less/plugins/plugin-ecommerce.less";  // Plugin > Ecommerce
+
+
+
+// -----------------------------
+// 2. Media Queries
+// -----------------------------
+
+@bp-tablet: ~"only screen and (max-width: 800px)";
+@bp-mobile: ~"only screen and (max-width: 600px)";
+
+
+
+// -----------------------------
+// 3. Global Styles
+// -----------------------------
+
+
+// Wrapping container
+.container {
+    max-width: 1200px;
+    margin: 0 auto 0 160px;
+    width: 80%;
+
+    @media @bp-tablet {
+        margin: 0 auto 0 100px;
+    }
+    @media @bp-mobile {
+        margin: 0 auto;
+        width: 90%;
+    }
+}
+
+
+// Stops mobile scrolling of the body - only the nav is scrollable
+.noscroll {
+    overflow: hidden;
+}
+
+//Used on the blog post page
+.post-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+
+// -----------------------------
+// 4. Page Layout
+// -----------------------------
+
+.page-wrapper {
+    padding-top: 40px;
+
+    @media @bp-mobile {
+        padding-top: 70px;
+    }
+}
+
+.template-content {
+    margin-top: 100px;
+
+    @media @bp-mobile {
+        margin-top: 80px;
+    }
+}
+
+.home-copy {
+    margin-bottom: 100px;
+}
+
+
+
+// -----------------------------
+// 5. Footer
+// -----------------------------
+
+.template-footer {
+    margin-top: 100px;
+    width: 100%;
+    float: left;
+}
+
+
+
