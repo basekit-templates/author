@@ -73,6 +73,13 @@
 // -----------------------------
 
 .companyname {
+    .company-link {
+        color: @color__h1--text;
+        &:hover {
+            color: lighten(@color__h1--text, 30%);
+            text-decoration: none;
+        }
+    }
     @media @bp-mobile {
         text-align: center;
     }
@@ -693,6 +700,12 @@ textarea,
     @media @bp-mobile {
         margin-top: 20px;
         text-align: center;
+    }
+}
+
+div#page-zones__template-widgets__feature-featurehome + .template-header {
+    .social-link {
+        color: @color__socialicons--icon;
     }
 }
 

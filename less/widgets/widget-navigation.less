@@ -8,10 +8,10 @@
 
 // Aligns bk hover EDITOR to the nav
 div#page-zones__template-widgets__extendednavigation-navigation .bk-overlay {
-    width: 80px;
+    width: 60px;
     height: 100%;
-    position: fixed;
-    z-index: 1;
+    position: absolute !important;
+    z-index: 999999;
     height: 130px;
 
     @media @bp-mobile {
@@ -25,7 +25,7 @@ div#page-zones__template-widgets__extendednavigation-navigation .bk-overlay {
 // -------------------
 
 .extendednavigation {
-    width: 80px;
+    width: 60px;
     height: 100%;
     position: fixed;
     z-index: 99999;
@@ -33,7 +33,7 @@ div#page-zones__template-widgets__extendednavigation-navigation .bk-overlay {
     background-color: @contrast-color;
 
     @media @bp-mobile {
-        width: 4px;
+        width: 0;
     }
 }
 
@@ -175,14 +175,17 @@ div#page-zones__template-widgets__extendednavigation-navigation .bk-overlay {
 // -----------------
 
 
-// This adds the yellow background to the nav at mobile
+// This adds the coloured background to the nav at mobile
 .extendednavigation:after {
     content: "";
-    padding: 20px 24px;
+    padding: 24px 26px;
     position: absolute;
-    top: 14px;
+    top: 10px;
     left: 0;
     background-color: @contrast-color;
+    -webkit-border-radius: 0 3px 3px 0;
+    -moz-border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0;
     z-index: -1;
 
 }
@@ -194,7 +197,7 @@ div#page-zones__template-widgets__extendednavigation-navigation .bk-overlay {
     background-color: @color__navigation--text;
     background-clip: content-box;
     width: 50px;
-    height: 47px;
+    height: 46px;
     padding: 22px 10px;
     position: relative;
     margin: 31px auto;
@@ -206,14 +209,13 @@ div#page-zones__template-widgets__extendednavigation-navigation .bk-overlay {
 
     @media @bp-mobile {
         margin-top: 10px;
-        // box-shadow: 0px 0px 0px 7px @black;
     }
 
     // Top and bottom navigation item bar
 
     &:after, &:before {
         content: "";
-        height: 3px;
+        height: 2px;
         width: 30px;
         position: absolute;
         left: 10px;

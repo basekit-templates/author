@@ -214,6 +214,9 @@
             "font__feature-strapline--line-height" : "@font-swatch9-line-height",
             "font__feature-strapline--letter-spacing" : "@font-swatch9-letter-spacing"
         },
+        "socialicons": {
+            "color__socialicons--icon": "@color-swatch1"
+        },
         "button": {
             "color__button--background": "@color-swatch3",
             "color__button--background--hover": "lighten(@color-swatch3, 10%)",

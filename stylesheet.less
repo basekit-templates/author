@@ -41,7 +41,7 @@
 // Wrapping container
 .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 0 160px;
     width: 80%;
 
     @media @bp-tablet {
@@ -50,6 +50,33 @@
     @media @bp-mobile {
         margin: 0 auto;
         width: 90%;
+    }
+}
+
+
+// Centre container for homepage
+.homepage-centred-container {
+    .page-wrapper {
+        margin-left: 80px;
+    }
+    .container {
+        margin: 0 auto;
+    }
+    @media @bp-tablet {
+        .page-wrapper {
+            margin-left: 80px;
+        }
+        .container {
+            margin: 0 auto;
+        }
+    }
+    @media @bp-mobile {
+        .page-wrapper {
+            margin-left: 0;
+        }
+        .container {
+            margin: 0 auto;
+        }
     }
 }
 
@@ -160,15 +187,11 @@
     .button {
         width: auto;
         margin: 1em 0;
-        padding: 0 20px;
         border: 2px solid @color__feature-button--border;
         font-size: 18px;
         line-height: 28px;
         color: @color__feature-button--text;
         background-color: @color__feature-button--background;
-        -webkit-border-radius: 100px;
-        -moz-border-radius: 100px;
-        border-radius: 100px;
     }
     .button:hover {
         border: 2px solid fade(@color__feature-button--border, 60%);
