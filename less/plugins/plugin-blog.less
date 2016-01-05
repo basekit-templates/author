@@ -1,16 +1,25 @@
 // --------------------------------
-// BALKAN: Variables-Mixins
-// --------------------------------
-
-
-
-// --------------------------------
 // Blog Post List
 // --------------------------------
 
 
 .blogpostlist {
-    margin-bottom: 80px;
+    margin: 0 -12px 80px;
+    .post-article {
+        padding: 0 12px 24px;
+    }
+    .post-list-footer {
+        padding: 0 12px;
+    }
+    @media @bp-mobile {
+        margin: 0 auto;
+        .post-article {
+            padding: 0 0 24px;
+        }
+        .post-list-footer {
+            padding: 0;
+        }
+    }
 }
 
 
@@ -18,35 +27,61 @@
     cursor: pointer;
 }
 
-// Product items in container
+// Articles
 .blogpostlist .post-article {
     float: left;
-    width: 32.33%;
+    width: 33.33%;
     height: auto;
-    margin-right: 1%;
-    margin-bottom: 1%;
 
-    border: 2px solid @black;
+    // Border
+    .post-image,
+    .post-content,
+    .post-footer {
+        border-left: 1px solid @black;
+        border-right: 1px solid @black;
+    }
+    .post-image {
+        border-top: 1px solid @black;
+    }
+    .post-footer {
+        border-bottom: 1px solid @black;
+        .timestamp {
+            margin: 0;
+        }
+    }
 
     .transition(@duration:0.2s, @ease:ease-in-out);
+
+    // Display 50% at tablet
+    @media only screen and (max-width : 950px) {
+        width: 50%;
+    }
 
     // Display 100% at mobile
     @media @bp-mobile {
         width: 100%;
-        margin-bottom: 4%;
+        margin-bottom: 20px;
         min-width: 260px;
     }
 }
 
 
 .blogpostlist .post-article:hover {
-    border: 2px solid @contrast-color;
-    // & .read-more {
-    //     text-decoration: underline;
-    // }
-
-    & .post-footer {
-        border-top: 2px solid @contrast-color;
+    // Border on hover
+    .post-image,
+    .post-content,
+    .post-footer {
+        border-left: 1px solid @contrast-color;
+        border-right: 1px solid @contrast-color;
+    }
+    .post-image {
+        border-top: 1px solid @contrast-color;
+    }
+    .post-footer {
+        border-bottom: 1px solid @contrast-color;
+    }
+    .read-more {
+        color: @contrast-color;
     }
 }
 
@@ -91,20 +126,18 @@
 
 
 // Content & Timestamp
-.blogpostlist__post-content,
-.blogpostlist__timestamp {
-  padding: 0 17px;
+.blogpostlist__post-content {
+  padding: 20px 17px;
+  margin: 0;
 }
 
-
-.blogpostlist__post-footer {
-  border-top: 2px solid @black;
-  .transition(@duration:0.2s, @ease:ease-in-out);
+.blogpostlist__timestamp {
+  padding: 0 17px 20px;
+  margin: 0;
 }
 
 
 .blogpostlist__post-footer .blogpostlist__timestamp {
-    margin: 18px 0;
     font-size: 18px; // Stops design breaking when p sixe is changed
 
     @media @bp-tablet {
@@ -113,7 +146,7 @@
     }
 
     @media @bp-mobile {
-        margin: 8px 0;
+        margin: 0;
         font-size: 16px;
         padding: 1px 10px;
     }

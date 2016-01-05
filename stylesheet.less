@@ -1,5 +1,5 @@
 // ---------------------
-// Balkan:  Main Styles
+// Main Styles
 // ---------------------
 
 // -----------------------------
@@ -8,6 +8,7 @@
 
 
 @import "@{templateCommon}/bk-less-framework-v8.less";             // BK LESS Framework
+// @import "@{templateLocal}/bk-v8-test.less";
 
 @import "@{templateLocal}/less/v8-variables.less";              // V8 Variables
 
@@ -40,7 +41,7 @@
 // Wrapping container
 .container {
     max-width: 1200px;
-    margin: 0 auto 0 160px;
+    margin: 0 auto;
     width: 80%;
 
     @media @bp-tablet {
@@ -100,6 +101,156 @@
     margin-top: 100px;
     width: 100%;
     float: left;
+}
+
+
+
+
+// -----------------------------
+// Feature
+// -----------------------------
+
+.feature {
+    .background-image,
+    .content-wrap {
+        height: 100vh;
+    }
+    .background-image {
+        display: table;
+        width: 100%;
+        background-size: cover;
+        // Overlay
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: @color__feature-content--background;
+            opacity: 0.4;
+        }
+    }
+    .content-wrap {
+        position: relative;
+        width: 100%;
+        vertical-align: middle;
+        display: table-cell;
+        text-align: center;
+        z-index: 99;
+    }
+    .headline {
+        font-family: @font__feature-headline--font-family;
+        color: @color__feature-headline--text;
+        font-size: @font__feature-headline--font-size;
+        font-weight: @font__feature-headline--font-weight;
+        line-height: @font__feature-headline--line-height;
+        letter-spacing: @font__feature-headline--letter-spacing;
+    }
+    .strapline {
+        font-family: @font__feature-strapline--font-family;
+        color: @color__feature-strapline--text;
+        font-size: @font__feature-strapline--font-size;
+        font-weight: @font__feature-strapline--font-weight;
+        line-height: @font__feature-strapline--line-height;
+        letter-spacing: @font__feature-strapline--letter-spacing;
+    }
+    .button {
+        width: auto;
+        margin: 1em 0;
+        padding: 0 20px;
+        border: 2px solid @color__feature-button--border;
+        font-size: 18px;
+        line-height: 28px;
+        color: @color__feature-button--text;
+        background-color: @color__feature-button--background;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        border-radius: 100px;
+    }
+    .button:hover {
+        border: 2px solid fade(@color__feature-button--border, 60%);
+        color: fade(@color__feature-button--text, 60%);
+    }
+}
+
+// Feature Image and Text Size on Tablet
+@media @tablet {
+    .feature {
+        .headline {
+            font-size: bkscale(@font__feature-headline--font-size, .8);
+            line-height: bkscale(@font__feature-headline--line-height, .8);
+        }
+        .strapline {
+            font-size: bkscale(@font__feature-strapline--font-size, .9);
+            line-height: bkscale(@font__feature-strapline--line-height, .9);
+        }
+        .button {
+            font-size: 16px;
+            line-height: 26px;
+        }
+    }
+}
+
+// Feature Image and Text Size on Mobile
+@media @mobile {
+    .feature {
+        .content-wrap {
+            padding: 15px;
+        }
+        .headline {
+            font-size: bkscale(@font__feature-headline--font-size, .6);
+            line-height: bkscale(@font__feature-headline--line-height, .6);
+        }
+        .strapline {
+            font-size: bkscale(@font__feature-strapline--font-size, .8);
+            line-height: bkscale(@font__feature-strapline--line-height, .8);
+        }
+        .button {
+            font-size: 14px;
+            line-height: 24px;
+        }
+    }
+}
+
+
+
+
+// -------------------
+// Feature Full Height
+// -------------------
+
+div#page-zones__template-widgets__feature-featurehome {
+    z-index: 0;
+}
+
+div#page-zones__template-widgets__feature-featurehome + .template-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 37px 20px 0 110px;
+    @media only screen and (max-width : 600px) {
+        padding: 14px 60px;
+    }
+    z-index: 9999;
+    border-bottom: none;
+    .company-link {
+        color: @color__companyname--text;
+        &:hover {
+            color: lighten(@color__navigation--text--hover, 30%);
+        }
+    }
+}
+
+div#page-zones__template-widgets__feature-featurehome.bk-tpl-hidden + .template-header {
+    position: relative;
+    border-bottom: 1px solid darken(@color__body--background, 8%);
+    margin-bottom: 30px;
+    .company-link {
+        color: @color-swatch3;
+    }
 }
 
 
