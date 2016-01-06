@@ -30,7 +30,10 @@ div#page-zones__template-widgets__extendednavigation-navigation .bk-overlay {
     position: fixed;
     z-index: 99999;
 
-    background-color: @contrast-color;
+    background-color: @color__navigation--background;
+    &:hover {
+        background-color: lighten(@color__navigation--background, 3%);
+    }
 
     @media @bp-mobile {
         width: 0;
@@ -72,6 +75,7 @@ div#page-zones__template-widgets__extendednavigation-navigation .bk-overlay {
     margin: 0;
         &.open {
             display: block;
+            background-color: lighten(@color__navigation--background, 3%);
         }
 }
 
@@ -141,7 +145,7 @@ div#page-zones__template-widgets__extendednavigation-navigation .bk-overlay {
     top: 100%;
     height: auto;
     min-width: 100%;
-    background-color: lighten(@contrast-color,5%);
+    background-color: lighten(@contrast-color,4%);
     white-space: nowrap;
 
     .transform(@x:-5px, @y:0);
@@ -177,17 +181,18 @@ div#page-zones__template-widgets__extendednavigation-navigation .bk-overlay {
 
 // This adds the coloured background to the nav at mobile
 .extendednavigation:after {
-    content: "";
-    padding: 24px 26px;
-    position: absolute;
-    top: 10px;
-    left: 0;
-    background-color: @contrast-color;
-    -webkit-border-radius: 0 3px 3px 0;
-    -moz-border-radius: 0 3px 3px 0;
-    border-radius: 0 3px 3px 0;
-    z-index: -1;
-
+    @media @bp-mobile {
+        content: "";
+        padding: 24px 26px;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        background-color: lighten(@color__navigation--background, 3%);
+        -webkit-border-radius: 0 3px 3px 0;
+        -moz-border-radius: 0 3px 3px 0;
+        border-radius: 0 3px 3px 0;
+        z-index: -1;
+    }
 }
 
 

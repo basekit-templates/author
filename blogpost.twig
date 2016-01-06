@@ -22,11 +22,7 @@
             </div>
 
             <!-- Footer Text Widget -->
-             <footer class="template-footer">
-                {{widget('content', 'footer-content', {
-                content: '<p>&copy; Copyright</p>'
-                })|raw}}
-            </footer>
+            {% include "includes/footer.twig" %}
 
         </section>
         <!-- End Page Content -->

@@ -4,13 +4,14 @@
         {{widget('logo', 'logo', {"defaultlogo": asset('images/logo-default.png')})|raw}}
         {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
     </div>
-
-    {{widget('socialicons', 'socialnetworks', {
-        'googleplus': 'profile',
-        'linkedin':'profile',
-        'facebook': 'profile',
-        'twitter': 'profile',
-        'youtube': 'profile',
-        'rss': 'profile'
-    })|raw}}
+    <div class="header-social">
+        {{widget('socialicons', 'socialnetworks', {
+            'googleplus': 'profile',
+            'linkedin':'profile',
+            'facebook': 'profile',
+            'twitter': 'profile',
+            'youtube': 'profile',
+            'rss': 'profile'
+        })|raw}}
+    </div>
 </header>

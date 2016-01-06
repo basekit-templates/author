@@ -7,7 +7,7 @@
 // -----------------------------
 
 
-@import "@{templateCommon}/bk-less-framework-v8.less";             // BK LESS Framework
+@import "@{templateCommon}/bk-less-framework-v8.less";          // BK LESS Framework
 // @import "@{templateLocal}/bk-v8-test.less";
 
 @import "@{templateLocal}/less/v8-variables.less";              // V8 Variables
@@ -219,6 +219,7 @@
     .feature {
         .content-wrap {
             padding: 15px;
+            vertical-align: bottom;
         }
         .headline {
             font-size: bkscale(@font__feature-headline--font-size, .6);
@@ -241,6 +242,7 @@
 // -------------------
 // Feature Full Height
 // -------------------
+
 
 div#page-zones__template-widgets__feature-featurehome {
     z-index: 0;
@@ -273,5 +275,21 @@ div#page-zones__template-widgets__feature-featurehome.bk-tpl-hidden + .template-
     }
 }
 
+// Social icons on homepage - display on footer for mobile
 
+.footer-social {
+    display: none;
+}
+
+.homepage-centred-container {
+    @media @mobile {
+        .header-social {
+            display: none;
+        }
+        .footer-social {
+            display: block;
+            margin: 10px 0 25px;
+        }
+    }
+}
 
