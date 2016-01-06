@@ -21,7 +21,7 @@
 .menusections-item {
     margin-bottom: 20px;
 
-    border-bottom: 2px solid @contrast-color;
+    border-bottom: 2px solid @color-swatch5;
     padding: 10px 20px;
 
     &:hover { border-bottom: 2px solid @black; }
@@ -42,9 +42,8 @@
     }
 }
 
-.section-header {
-    margin-bottom: 40px;
-    text-align: center;
+.menu-item-name {
+    color: @color-swatch5;
 }
 
 
@@ -53,6 +52,21 @@
 // -----------------------------
 // 2. #Menu
 // -----------------------------
+
+.section-header {
+    margin-bottom: 40px;
+    text-align: center;
+    h3 {
+        color: @color-swatch5;
+        font-size: @font__p--font-size;
+        line-height: @font__p--line-height;
+        font-family: @font__p--font-family;
+    }
+}
+
+.menu__item-article {
+    display: inline-block;
+}
 
 // #Menu Item
 // ----------
@@ -83,15 +97,18 @@
 
 .menu-item--featured,
 .menu-section--featured {
-    background-color: transparent;
+    background-color: darken(@color-swatch1, 5%);
     padding: 16px;
-    border: 4px solid @black;
+    border: 1px solid darken(@color-swatch1, 10%);
 
     @media @bp-mobile {
         padding: 10px;
     }
 }
 
+.menu-section--featured {
+    margin: 30px 0;
+}
 
 // #Footer
 // ----------
