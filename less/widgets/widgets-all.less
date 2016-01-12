@@ -34,7 +34,9 @@
 .template-header {
     .flex-vert-center; // Mixins
     .justify-content(@justify: space-between); // Mixins
-
+    @media only screen and (min-width : 600px) {
+        padding: 26px 0 0;
+    }
     @media @bp-tablet {
         .flex-wrap(@wrap: wrap); // Mixins
     }
