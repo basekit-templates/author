@@ -3,12 +3,12 @@
 // ---------------------
 
 // -----------------------------
-// 1. LESS Includes
+// LESS Includes
 // -----------------------------
 
 
 @import "@{templateCommon}/bk-less-framework-v8.less";          // BK LESS Framework
- // @import "@{templateLocal}/bk-v8-test.less";
+// @import "@{templateLocal}/bk-v8-test.less";
 
 @import "@{templateLocal}/less/v8-variables.less";              // V8 Variables
 
@@ -25,7 +25,7 @@
 
 
 // -----------------------------
-// 2. Media Queries
+// Media Queries
 // -----------------------------
 
 @bp-tablet: ~"only screen and (max-width: 800px)";
@@ -33,8 +33,24 @@
 
 
 
+
+// ---------------------------------
+// Fix homepae height in editor mode
+// ---------------------------------
+
+html.html-home,
+body.bk-pt-home.edit {
+    position: relative;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+
+
 // -----------------------------
-// 3. Global Styles
+// Global Styles
 // -----------------------------
 
 
@@ -95,7 +111,7 @@
 
 
 // -----------------------------
-// 4. Page Layout
+// Page Layout
 // -----------------------------
 
 .page-wrapper {
@@ -118,7 +134,7 @@
 
 
 // -----------------------------
-// 5. Footer
+// Footer
 // -----------------------------
 
 .template-footer {

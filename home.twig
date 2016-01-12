@@ -1,47 +1,112 @@
-{% extends "layout.twig" %}
+<!doctype html>
+<!--[if lt IE 7]>
+    <html class="no-js ie6 oldie" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+    <html class="no-js ie7 oldie" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+    <html class="no-js ie8 oldie" lang="en">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js html-home" lang="{{ page.seoLang }}">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>{{ page.title }}</title>
+    <meta name="keywords" content="{{ page.keywords }}" />
+    <meta name="description" content="{{ page.description }}" />
 
-{% block content %}
+    {% if site.favicon %}
+        <link rel="icon" href="{{ site.favicon['favicon'] }}" type="image/x-icon" />
+        <link rel="SHORTCUT ICON" href="{{ site.favicon['thumbnail'] }}?v={{ "now"|date("U") }}" type="image/x-icon" />
+    {% endif %}
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<div class="homepage-centred-container">
+    {% include basekit.headScript %}
+</head>
+<body class="{{ page.backgroundClass }} bk-pt-home">
 
-{{widget('extendednavigation', 'navigation', {"align":"left"})|raw}}
+    <div class="homepage-centred-container">
 
-<!-- Theme Feature Widget -->
+        {{widget('extendednavigation', 'navigation', {"align":"left"})|raw}}
 
-{{widget('feature', 'featurehome', {
-    "header": "profile",
-    "defaultBgImg": asset('images/feature.jpg'),
-    'positionTopPercentage': '0',
-    'showBtn': true,
-    buttonText: "Lorem Ipsum"
-})|raw}}
+        <!-- Theme Feature Widget -->
 
-{% include "includes/header.twig" %}
+        {{widget('feature', 'featurehome', {
+            "header": "profile",
+            "defaultBgImg": asset('images/feature.jpg'),
+            'positionTopPercentage': '0',
+            'showBtn': true,
+            buttonText: "Lorem Ipsum"
+        })|raw}}
 
-<div class="page-wrapper">
+        {% include "includes/header.twig" %}
 
-    <!-- Container -->
-    <div class="container">
+        <div class="page-wrapper">
 
-        <!-- Page Content -->
-        <section class="template-content">
+            <!-- Container -->
+            <div class="container">
+
+                <!-- Page Content -->
+                <section class="template-content">
 
 
-            <!-- Main Widget Zone -->
-            {{zone('main')|raw}}
+                    <!-- Main Widget Zone -->
+                    {{zone('main')|raw}}
 
-            <!-- Footer Text Widget -->
-            {% include "includes/footer.twig" %}
+                    <!-- Footer Text Widget -->
+                    {% include "includes/footer.twig" %}
 
-        </section>
-        <!-- End Page Content -->
+                </section>
+                <!-- End Page Content -->
+
+            </div>
+            <!-- End Container -->
+
+        </div>
+        <!-- End Page Wrapper -->
 
     </div>
-    <!-- End Container -->
 
-</div>
-<!-- End Page Wrapper -->
+    {% include basekit.bodyScript %}
 
-</div>
+    <!-- jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ asset('libs/jquery-1.10.2.min.js')}}"><\/script>')</script>
 
-{% endblock %}
+    <!-- Clickable -->
+    <script src="{{ asset('js/clickable.js')}}"></script>
+
+    <!-- Nav Menu Script -->
+    <script>
+
+        // Toggles class open to display/hide the whole navigation
+        $( ".navigation-toggle" ).click(function() {
+            $( ".bk-extendednavigation" ).toggleClass( "open" );
+        });
+
+        // Toggles class open to add noscroll to body
+        $( ".navigation-toggle" ).click(function() {
+            $( "body" ).toggleClass( "noscroll" );
+        });
+
+    </script>
+
+    <!-- imagesLoaded -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
+
+    <!-- Masonry -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.2.1/masonry.pkgd.min.js"></script>
+
+    <script>
+        var container = document.querySelector('.post-items');
+        imagesLoaded( container, function() {
+            var msnry = new Masonry( container, {
+                itemSelector: '.post-article'
+            });
+        });
+    </script>
+
+</body>
+</html>
