@@ -289,11 +289,11 @@ body.bk-pt-home.edit {
 // -------------------
 
 
-div#page-zones__template-widgets__feature-featurehome {
+.bk-pt-home [data-widget-type="feature"] {
     z-index: 0;
 }
 
-div#page-zones__template-widgets__feature-featurehome + .template-header {
+.bk-pt-home [data-widget-type="feature"] + .template-header {
     position: absolute;
     top: 0;
     width: 100%;
@@ -311,13 +311,17 @@ div#page-zones__template-widgets__feature-featurehome + .template-header {
     }
 }
 
-div#page-zones__template-widgets__feature-featurehome.bk-tpl-hidden + .template-header {
+.bk-tpl-hidden[data-widget-type="feature"] + .template-header {
     position: relative;
     border-bottom: 1px solid darken(@color__body--background, 8%);
     margin-bottom: 30px;
     .company-link {
         color: @color-swatch3;
     }
+}
+
+[data-widget-type="feature"] .widget-overlay {
+    top: 100px !important;
 }
 
 // Social icons on homepage - display on footer for mobile
