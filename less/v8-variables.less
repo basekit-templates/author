@@ -1,56 +1,3 @@
-// ------------------
-// Metadata Variables
-// ------------------
-
-
-
-
-// Variables
-// ----------------
-
-
-// // colors
-// @color__primary: @color-swatch2;
-// @color__secondary: @color-swatch1;
-
-// // site
-// @color__body--background: @color-swatch1;
-// @color__link--text: darken(@color-swatch2, 10%);
-// @color__companyname--text: @font-swatch10-color;
-
-// // typography
-// @color__h1--text: @font-swatch1-color;
-// @color__h2--text: @font-swatch2-color;
-// @color__h3--text: @font-swatch3-color;
-// @color__h4--text: @font-swatch4-color;
-// @color__p--text: @font-swatch5-color;
-
-// // navigation
-// @color__navigation--background: @color__primary;
-// @color__navigation--text: @font-swatch6-color;
-
-// // button
-// @color__button--background: @color-swatch3;
-// @color__button--background--hover: lighten(@color-swatch3, 10%);
-// @color__button--text: @font-swatch7-color;
-
-// // gallery
-// @color__gallery-caption--background: fade(@color-swatch2,30%);
-// @color__gallery-title--text: @color-swatch1;
-// @color__gallery-description--text: @color-swatch1;
-
-// // blog
-// @color__blogpostlist-article--background: transparent;
-// @color__blogpostlist-title--text: @color-swatch4;
-
-// // ecommerce
-// @color__ecomproduct-title--text: @font-swatch1-color;
-// @color__ecomproduct-price--text: @color-swatch5;
-
-// // legend
-// @color__form-legend--text: @color-swatch4;
-
-
 // Feature
 @color__feature-headline--text:  @font-swatch8-color;
 @color__feature-strapline--text: @font-swatch9-color;
@@ -76,12 +23,15 @@
 @bg-color:              @color__body--background;               // Background
 
 @contrast-color:        @color__primary;                        // Contrast Color
+
 @contrast-color-alt:    darken(@color__primary,10%);            // Contrast Color Alt
 
 @button-color:          @color__button--background;             // Button BG Color
+
 @button-color-alt:      @color__button--background--hover;      // Button BG Color
 
 @heading-color:         @color-swatch4;                       // Heading Text Color (H1 - H4)
+
 @paragraph-color:       @color-swatch5;                        // Paragraph Text Color
 
 @black:                 @color-swatch7;
@@ -97,6 +47,15 @@ body {
 
 .company-link {
     color: @color__companyname--text;
+    font-family: @font__companyname--font-family;
+    font-size: @font__companyname--font-size;
+    font-weight: @font__companyname--font-weight;
+    line-height: @font__companyname--line-height;
+    letter-spacing: @font__companyname--letter-spacing;
+    @media only screen and (max-width : 600px) {
+        font-size: bkscale(@font__companyname--font-size,0.8);
+        line-height: bkscale(@font__companyname--line-height,0.8);
+    }
 }
 
 
@@ -168,7 +127,10 @@ button,
     // typography
     .extendednavigation__item-name {
         color: @color__navigation--text;
-
+        font-size: @font__navigation--font-size;
+        font-weight: @font__navigation--font-weight;
+        line-height: @font__navigation--line-height;
+        letter-spacing: @font__navigation--letter-spacing;
         &:hover {
             color: @color__navigation--text--hover;
         }
