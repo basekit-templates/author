@@ -53,9 +53,9 @@
             "font-family": "\"Lora\", \"Georgia\", serif",
             "font-size": "26px",
             "font-weight": "400",
-            "line-height": "45px",
+            "line-height": "40px",
             "color": "@color-swatch4",
-            "letter-spacing": "inherit"
+            "letter-spacing": "0px"
         },
         "font2": {
             "font-family": "\"Lora\", \"Georgia\", serif",
@@ -63,7 +63,7 @@
             "font-weight": "400",
             "line-height": "38px",
             "color": "@color-swatch4",
-            "letter-spacing": "inherit"
+            "letter-spacing": "0px"
         },
         "font3": {
             "font-family": "\"Lora\", \"Georgia\", serif",
@@ -71,15 +71,15 @@
             "font-weight": "400",
             "line-height": "30px",
             "color": "@color-swatch4",
-            "letter-spacing": "inherit"
+            "letter-spacing": "0px"
         },
         "font4": {
             "font-family": "\"Lora\", \"Georgia\", serif",
             "font-size": "18px",
             "font-weight": "400",
-            "line-height": "inherit",
+            "line-height": "28px",
             "color": "@color-swatch4",
-            "letter-spacing": "inherit"
+            "letter-spacing": "0px"
         },
         "font5": {
             "font-family": "\"Source Sans Pro\", Geneva, Tahoma, sans-serif",
@@ -87,7 +87,7 @@
             "font-weight": "400",
             "line-height": "28px",
             "color": "@color-swatch5",
-            "letter-spacing": "inherit"
+            "letter-spacing": "0px"
         },
         "font6": {
             "font-family": "\"Source Sans Pro\", Geneva, Tahoma, sans-serif",
@@ -96,17 +96,17 @@
             "line-height": "34px",
             "color": "@color-swatch6",
             "color-hover": "@color-swatch7",
-            "letter-spacing": "inherit",
+            "letter-spacing": "0px",
             "background-color": "@color-swatch1",
             "background-color-hover": "@color-swatch1"
          },
         "font7": {
             "font-family": "\"Source Sans Pro\", Geneva, Tahoma, sans-serif",
             "font-size": "16px",
-            "font-weight": "inherit",
-            "line-height": "inherit",
+            "font-weight": "400",
+            "line-height": "26px",
             "color": "@color-swatch1",
-            "letter-spacing": "inherit",
+            "letter-spacing": "0px",
             "background-color": "@color-swatch3",
             "background-color-hover": "darken(@color-swatch3,10%)"
         },
@@ -116,15 +116,15 @@
             "font-weight": "400",
             "line-height": "50px",
             "color": "@color-swatch1",
-            "letter-spacing": "inherit"
+            "letter-spacing": "0px"
         },
         "font9": {
             "font-family": "\"Source Sans Pro\", Geneva, Tahoma, sans-serif",
             "font-size": "20px",
-            "font-weight": "inherit",
+            "font-weight": "400",
             "line-height": "30px",
             "color": "@color-swatch1",
-            "letter-spacing": "inherit"
+            "letter-spacing": "0px"
         },
         "font10": {
             "font-family": "\"Source Sans Pro\", Geneva, Tahoma, sans-serif",
@@ -132,7 +132,7 @@
             "font-weight": "300",
             "line-height": "40px",
             "color": "@color-swatch1",
-            "letter-spacing": "inherit"
+            "letter-spacing": "0px"
         }
     },
     "styles": {
