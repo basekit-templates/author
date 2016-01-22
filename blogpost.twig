@@ -1,7 +1,6 @@
 {% extends "layout.twig" %}
-
+{% block class %}bk-pt-default{% endblock %}
 {% block content %}
-
 
 {{widget('extendednavigation', 'navigation', {"align":"left"})|raw}}
 
@@ -10,22 +9,26 @@
     <!-- Container -->
     <div class="container">
 
-        {% include "includes/header.twig" %}
+        <div class="sticky-footer">
 
-        <!-- Page Content -->
-        <section class="template-content">
+            {% include "includes/header.twig" %}
 
-            <div class="post-container">
+            <!-- Page Content -->
+            <section class="template-content">
 
-            {{widget('blogpost', 'singleblogpost', {})|raw}}
+                <div class="post-container">
 
-            </div>
+                {{widget('blogpost', 'singleblogpost', {})|raw}}
 
-            <!-- Footer Text Widget -->
-            {% include "includes/footer.twig" %}
+                </div>
 
-        </section>
-        <!-- End Page Content -->
+            </section>
+            <!-- End Page Content -->
+
+        </div>
+
+        <!-- Footer Text Widget -->
+        {% include "includes/footer.twig" %}
 
     </div>
     <!-- End Container -->
