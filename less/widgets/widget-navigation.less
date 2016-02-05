@@ -67,7 +67,7 @@ body.edit .extendednavigation {
     // Allows scrolling on mobile
     &.open {
         overflow: auto;
-    }
+    } 
 
     @media @bp-mobile {
         padding: 90px 0 0 0;
@@ -144,38 +144,69 @@ body.edit .extendednavigation {
 
 
 .navigation-list .navigation-list--children {
-    padding: 0;
-    position: relative;
-    left: 50px;
-    top: 100%;
-    height: auto;
-    min-width: 100%;
-    background-color: lighten(@contrast-color,4%);
-    white-space: nowrap;
+    @media only screen and (min-width: 800px) {
+        padding: 0;
+        position: relative;
+        left: 50px;
+        top: 100%;
+        height: auto;
+        min-width: 100%;
+        background-color: lighten(@contrast-color,4%);
+        white-space: nowrap;
 
-    .transform(@x:-5px, @y:0);
-    .transition(@duration:0.4s, @ease:ease-in-out);
+        .transform(@x:-5px, @y:0);
+        .transition(@duration:0.4s, @ease:ease-in-out);
 
-    display: block;
-    position: absolute;
-    height: 0;
-    opacity: 0;
-    overflow: hidden;
-    visibility: hidden;
-
-    @media @bp-tablet {
-        left: 0;
+        display: block;
+        position: absolute;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
     }
 }
 
 
 .navigation-list.open .navigation-item:hover .navigation-list--children {
-  height: auto;
-  padding: 0;
-  position: relative;
-  opacity: 1;
-  .transform(@x:0, @y:0);
-  visibility: visible;
+  @media only screen and (min-width: 800px) {
+      height: auto;
+      padding: 0;
+      position: relative;
+      opacity: 1;
+      .transform(@x:0, @y:0);
+      visibility: visible;
+    }
+}
+
+.navigation-item.folder .navigation-list--children {
+    @media @bp-tablet {
+        .transform(@x:0, @y:0);
+        transition: none;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -o-transition: none;
+        display: block;
+        position: absolute;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+    }
+}
+
+.navigation-item.folder.open .navigation-list--children {
+    @media @bp-tablet {
+        .transform(@x:0, @y:0);
+        transition: none;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -o-transition: none;
+        height: auto;
+        padding: 0;
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
 
