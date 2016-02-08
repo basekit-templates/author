@@ -144,7 +144,7 @@ body.edit .extendednavigation {
 
 
 .navigation-list .navigation-list--children {
-    @media only screen and (min-width: 1024px) {
+    @media only screen and (min-width: 1025px) {
         padding: 0;
         position: relative;
         left: 50px;
@@ -166,9 +166,8 @@ body.edit .extendednavigation {
     }
 }
 
-
 .navigation-list.open .navigation-item:hover .navigation-list--children {
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1025px) {
       height: auto;
       padding: 0;
       position: relative;
@@ -179,7 +178,7 @@ body.edit .extendednavigation {
 }
 
 .navigation-item.folder .navigation-list--children {
-    @media @bp-tablet {
+    @media only screen and (max-width: 1024px) {
         .transform(@x:0, @y:0);
         transition: none;
         -webkit-transition: none;
@@ -194,8 +193,8 @@ body.edit .extendednavigation {
     }
 }
 
-.navigation-item.folder.open .navigation-list--children {
-    @media @bp-tablet {
+.navigation-item.folder.folder-open .navigation-list--children {
+    @media only screen and (max-width: 1024px) {
         .transform(@x:0, @y:0);
         transition: none;
         -webkit-transition: none;
