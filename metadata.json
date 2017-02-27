@@ -222,9 +222,7 @@
             "font__feature-strapline--font-size" : "@font-swatch9-font-size",
             "font__feature-strapline--font-weight" : "@font-swatch9-font-weight",
             "font__feature-strapline--line-height" : "@font-swatch9-line-height",
-            "font__feature-strapline--letter-spacing" : "@font-swatch9-letter-spacing",
-
-            "font__feature-button--font-family" : "@font-swatch7-font-family"
+            "font__feature-strapline--letter-spacing" : "@font-swatch9-letter-spacing"
         },
         "socialicons": {
             "color__socialicons--icon": "@color-swatch1"
