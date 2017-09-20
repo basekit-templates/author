@@ -7,15 +7,14 @@
 // -------------------
 
 .extendednavigation + .widget-overlay {
-    width: 60px;
-    position: absolute !important;
-    z-index: 999999;
-    height: 130px;
+    display: none;
+}
 
-    @media @bp-mobile {
-        width: 60px;
-        height: 60px;
-    }
+.extendednavigation.open + .widget-overlay {
+    display: block;
+    left: 60px;
+    position: fixed;
+    z-index: 10002;
 }
 
 
