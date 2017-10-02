@@ -7,15 +7,14 @@
 // -------------------
 
 .extendednavigation + .widget-overlay {
-    width: 60px;
-    position: absolute !important;
-    z-index: 999999;
-    height: 130px;
+    display: none;
+}
 
-    @media @bp-mobile {
-        width: 60px;
-        height: 60px;
-    }
+.extendednavigation.open + .widget-overlay {
+    display: block;
+    left: 60px;
+    position: fixed!important;
+    z-index: 10003;
 }
 
 
@@ -26,9 +25,9 @@
     width: 60px;
     height: 100%;
     position: fixed;
-    z-index: 99999;
-
+    z-index: 10002;
     background-color: @color__navigation--background;
+
     &:hover {
         background-color: lighten(@color__navigation--background, 3%);
     }
@@ -57,15 +56,12 @@ body.edit .extendednavigation {
     width: 100%;
     .transform(@x:-100%, @y:0);
     transition-duration: 0.4s;
-
-
     z-index: 2;
-
     padding: 150px 100px;
     background-color: @contrast-color;
 
     // Allows scrolling on mobile
-    &.open {
+    .open & {
         overflow: auto;
     }
 
@@ -78,10 +74,11 @@ body.edit .extendednavigation {
 // Hides navigation until toggled
 .navigation-list {
     margin: 0;
-        &.open {
-            display: block;
-            background-color: lighten(@color__navigation--background, 3%);
-        }
+
+    .open & {
+        display: block;
+        background-color: lighten(@color__navigation--background, 3%);
+    }
 }
 
 
@@ -118,7 +115,7 @@ body.edit .extendednavigation {
 
 
 // Navigation item when nav is open
-.navigation-list.open {
+.open .navigation-list {
   .transform(@x:0, @y:0);
 
   .navigation-item {
