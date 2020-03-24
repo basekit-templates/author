@@ -25,7 +25,7 @@
 
     {% include basekit.headScript %}
 </head>
-<body class="{{ page.backgroundClass }} bk-pt-default">
+<body class="{{ page.backgroundClass }} bk-pt-default" {{ isV10sSite ? 'id="migrated-site"' : '' }}>
 
 {{widget('extendednavigation', 'navigation', {"align":"left"})|raw}}
 

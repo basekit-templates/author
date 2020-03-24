@@ -4,6 +4,8 @@
 
 
 #migrated-site {
+    
+    height: 100%;
 
 
     // Stylesheet overrides
@@ -13,7 +15,36 @@
     .container {
         width: 100%;
         max-width: 100%;
-        padding: 0;
+        margin: 0;
+    }
+    
+    .page-wrapper {
+        padding-top: 0;
+    }
+    
+    
+    &.bk-pt-home .row-overlay {
+        left: -160px;
+    }
+    
+    .template-content {
+        margin-top: 0;
+    }
+    
+    
+    // Edit mode
+    &.edit {
+        .extendednavigation {
+            z-index: 2;
+            
+            &.open {
+                z-index: 2;
+            }
+        }
+        .extendednavigation.open .navigation-list {
+            left: 100px;
+            width: calc(~'100% - 200px');
+        }
     }
 
 
@@ -26,35 +57,134 @@
     // Applies spacing to widgets to mimic container width
     .empty-zone,
     #page-zones__main:empty,
-    #page-zones__main > .widget:not([data-name="row"]),
-    .row:not(.row--width-no-padding) .row__container {
+    &.bk-pt-home #page-zones__main > .widget:not([data-name="row"]),
+    &.bk-pt-home .row:not(.row--width-no-padding) .row__container,
+    &.bk-pt-home .template-footer {
+        width: 80%;
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
+        
+        @media @tablet {
+        }
+        @media @mobile {
+            width: 90%;
+        }
+    }
+    
+    // Default page
+    &.bk-pt-default {
+        #page-zones__main > .widget:not([data-name="row"]),
+        .row:not(.row--width-no-padding) .row__container,
+        .template-footer,
+        .template-header {
+            width: 80%;
+            max-width: 1200px;
+            margin-left: 160px;
+            
+            @media @tablet {
+                margin-left: 100px;
+            }
+            @media @mobile {
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        
+        .template-header {
+            padding-top: 38px;
+            padding-bottom: 26px;
+            overflow: visible;
+            
+            @media @mobile {
+                padding-top: 12px;
+                padding-bottom: 0;
+            }
+        }
+
+        
+        // Row container
+        [data-name="row"] .row__container {
+            margin-left: 160px;
+            
+            @media @tablet {
+                margin-left: 100px;
+            }
+            @media @mobile {
+                margin-left: 0;
+            }
+        }
     }
     
     
     // Adds spacing to a section when a widget follows it
     #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]),
     #page-zones__main > .widget:not([data-name="row"]) + [data-name="row"]:not(:last-child),
-    &.edit #page-zones__main-overlay + .widget:not([data-name="row"]),
+    &.edit #page-zones__main-overlay + .widget:not([data-name="row"]){
+        margin-top: 80px;
+        
+        @media @tablet {
+            margin-top: 40px;
+        }
+    }
+    
+    
+     // Remove bottom spacing from light section if widget follows
+    #page-zones__main > [data-name="row"].style--light + .widget:not([data-name="row"]) {
+        margin-top: 0;
+    }
+    
+    
+    // First widget
+    .bk-pt-home #page-zones__main > .widget:not([data-name="row"]):first-child {
+        padding-top: 62px;
+    }
     #page-zones__main > .widget:not([data-name="row"]):first-child {
-        margin-top: 20px;
+        padding-top: 50px;
+        
+        @media @mobile {
+            padding-top: 30px;
+        }
     }
 
     
     // Move spacing to last widget in the main zone (not sections)
     #page-zones__main > .widget:not([data-name="row"]):last-child {
-        margin-bottom: 20px;
-
-        @media @tablet {
-            // margin-bottom: 1em;
-        }
+        margin-bottom: 62px;
     }
     
     
     // Widget styles
     [data-name="row"] {
+        .socialicons__social-link {
+            display: inherit;
+            padding: 10px;
+        }
     }
+    
+    
+    // Section styles
+    .row--image-text-8a .image-link.gallery__image-link,
+    [data-name="row"] .gallery .image-link {
+        padding-bottom: inherit;
+    }
+    
+    &.bk-pt-default [data-name="row"] {
+        [data-rowtype="image-text-5a"],
+        [data-rowtype="image-text-5b"],
+        [data-rowtype="hero-7a"],
+        [data-rowtype="hero-7a"] {
+            .row__container {
+                margin-left: 0;
+                padding-left: 60px;
+                
+                @media @mobile {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+    
 
 }
