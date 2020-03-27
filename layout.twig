@@ -16,7 +16,7 @@
         {% include basekit.headScript %}
     </head>
 
-    <body class="{{ page.backgroundClass }}" {{ isV10sSite ? 'id="migrated-site"' : '' }}>
+    <body class="{{ page.backgroundClass }} {% block class %}{% endblock %}" {{ isV10sSite ? 'id="migrated-site"' : '' }}>
 
     {% block content %}
     {% endblock %}
@@ -31,9 +31,6 @@
             $(document.documentElement).toggleClass('no-touch', e.trueHover);
         });
     </script>
-
-    <!-- Clickable -->
-    <!-- <script src="{{ asset('js/clickable.js')}}"></script> -->
 
     <!-- Nav Menu Script -->
     <script nonce="{{ numberUsedOnce }}">
