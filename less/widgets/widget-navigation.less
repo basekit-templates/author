@@ -21,6 +21,16 @@
 // Extended Navigation
 // -------------------
 
+[data-widget-type="extendednavigation"] {
+    z-index: 2;
+
+    .edit & {
+        @media only screen and (max-width: 1025px) {
+            z-index: initial;  
+        }
+    }
+}
+
 .extendednavigation {
     width: 60px;
     height: 100%;
